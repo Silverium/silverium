@@ -1,3 +1,5 @@
 node_modules
 .next
 .contentlayer
+.DS_Store
+.env.local

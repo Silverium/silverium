@@ -7,7 +7,7 @@ import * as React from "react";
 function clsx(...args: any) {
 	return args.filter(Boolean).join(" ");
 }
-const components = {
+const components: Record<string, React.FC<any>> = {
 	h1: ({ className, ...props }) => (
 		<h1
 			className={clsx(

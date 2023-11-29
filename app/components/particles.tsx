@@ -42,11 +42,11 @@ export default function Particles({
 
 	useEffect(() => {
 		onMouseMove();
-	}, [mousePosition.x, mousePosition.y]);
+	}, []);
 
 	useEffect(() => {
 		initCanvas();
-	}, [refresh]);
+	}, []);
 
 	const initCanvas = () => {
 		resizeCanvas();

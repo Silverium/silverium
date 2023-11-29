@@ -2,11 +2,7 @@ import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
 import "../global.css";
-import {
-	Analytics
-
-
-} from "./components/analytics";
+import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
 	title: {
@@ -69,8 +65,9 @@ export default function RootLayout({
 				<Analytics />
 			</head>
 			<body
-				className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
-					}`}
+				className={`bg-black ${
+					process.env.NODE_ENV === "development" ? "debug-screens" : undefined
+				}`}
 			>
 				{children}
 			</body>

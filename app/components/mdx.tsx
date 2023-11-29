@@ -4,9 +4,10 @@ import Link from "next/link";
 // @ts-nocheck
 import * as React from "react";
 
-function clsx(...args: any) {
+function clsx(...args: string[]) {
 	return args.filter(Boolean).join(" ");
 }
+// biome-ignore lint/suspicious/noExplicitAny: it's a generic component
 const components: Record<string, React.FC<any>> = {
 	h1: ({ className, ...props }) => (
 		<h1
@@ -96,11 +97,12 @@ const components: Record<string, React.FC<any>> = {
 		/>
 	),
 	img: ({
-		className,
+		className = "",
 		alt,
 		...props
 	}: React.ImgHTMLAttributes<HTMLImageElement>) => (
 		// eslint-disable-next-line @next/next/no-img-element
+		// biome-ignore lint/a11y/useAltText: <explanation>
 		<img
 			className={clsx("rounded-md border border-zinc-200", className)}
 			alt={alt}
@@ -110,12 +112,18 @@ const components: Record<string, React.FC<any>> = {
 	hr: ({ ...props }) => (
 		<hr className="my-4 border-zinc-200 md:my-8" {...props} />
 	),
-	table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
+	table: ({
+		className = "",
+		...props
+	}: React.HTMLAttributes<HTMLTableElement>) => (
 		<div className="w-full my-6 overflow-y-auto">
 			<table className={clsx("w-full", className)} {...props} />
 		</div>
 	),
-	tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
+	tr: ({
+		className = "",
+		...props
+	}: React.HTMLAttributes<HTMLTableRowElement>) => (
 		<tr
 			className={clsx(
 				"m-0 border-t border-zinc-300 p-0 even:bg-zinc-100",

@@ -14,9 +14,6 @@ overrides:
   '@opentelemetry/semantic-conventions': 1.13.0
 
 dependencies:
-  '@biomejs/biome':
-    specifier: ^1.4.0
-    version: 1.4.0
   '@next/mdx':
     specifier: ^13.5.4
     version: 13.5.4
@@ -67,6 +64,9 @@ dependencies:
     version: 5.2.2
 
 devDependencies:
+  '@biomejs/biome':
+    specifier: ^1.4.0
+    version: 1.4.0
   '@opentelemetry/api':
     specifier: 1.4.1
     version: 1.4.1
@@ -127,7 +127,7 @@ packages:
       '@biomejs/cli-linux-x64': 1.4.0
       '@biomejs/cli-win32-arm64': 1.4.0
       '@biomejs/cli-win32-x64': 1.4.0
-    dev: false
+    dev: true
 
   /@biomejs/cli-darwin-arm64@1.4.0:
     resolution: {integrity: sha512-nBrtVRwr4IlTtxLOHwBwLv1sWvggf9/DnT5/ALIANJZOpoING6u8jHWipods69wK8kGa8Ld7iwHm3W5BrJJFFQ==}
@@ -135,7 +135,7 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /@biomejs/cli-darwin-x64@1.4.0:
@@ -144,7 +144,7 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /@biomejs/cli-linux-arm64@1.4.0:
@@ -153,7 +153,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /@biomejs/cli-linux-x64@1.4.0:
@@ -162,7 +162,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /@biomejs/cli-win32-arm64@1.4.0:
@@ -171,7 +171,7 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /@biomejs/cli-win32-x64@1.4.0:
@@ -180,7 +180,7 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /@contentlayer/cli@0.3.4(esbuild@0.19.4)(markdown-wasm@1.2.0):

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 		siteName: "silverium.vercel.app",
 		images: [
 			{
-				url: "https://silverium.vercel.app/og.png",
+				url: "/og.png",
 				width: 1920,
 				height: 1080,
 			},

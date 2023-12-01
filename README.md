@@ -1,8 +1,5 @@
 ### Hi there 👋
-<picture>
-  <source srcset="(/public/solde-hero.jpg" width=300 >
-</picture>
-
+![Solde's portrait](/public/solde-hero.jpg)
 ## About me 
 Here are some quotes that define my philosophy:
 - "Laziness leads to unhappiness"

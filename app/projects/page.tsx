@@ -23,15 +23,18 @@ export default async function ProjectsPage() {
 		{} as Record<string, number>,
 	);
 
-	const featured = allProjects.find(
-		(project) => project.slug === "nyc-taxis-demo",
+	const projectsBySlug = allProjects.reduce(
+		(acc, p) => {
+			acc[p.slug] = p;
+			return acc;
+		},
+		{} as Record<string, typeof allProjects[number]>,
 	);
-	const top2 = allProjects.find(
-		(project) => project.slug === "nextjs-products-drag-n-drop",
-	);
-	const top3 = allProjects.find(
-		(project) => project.slug === "container-vessel-schedules",
-	);
+
+	const featured = projectsBySlug["nyc-taxis-demo"];
+	const top2 = projectsBySlug["nextjs-products-drag-n-drop"];
+	const top3 = projectsBySlug["container-vessel-schedules"];
+
 	const sorted = allProjects
 		.filter((p) => p.published)
 		.filter(

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 		siteName: "soldeplata.dev",
 		images: [
 			{
-				url: "/og.png",
+				url: "https://www.soldeplata.dev/og.png",
 				width: 512,
 				height: 512,
 			},

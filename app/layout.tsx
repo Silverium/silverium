@@ -7,14 +7,14 @@ import { Analytics } from "./components/analytics";
 export const metadata: Metadata = {
 	title: {
 		default: "Soldeplata Dev",
-		template: "%s | silverium.vercel.app",
+		template: "%s | soldeplata.dev",
 	},
 	description: "Your favorite developer's favorite developer",
 	openGraph: {
 		title: "Soldeplata Dev",
 		description: "Your favorite developer's favorite developer",
-		url: "https://silverium.vercel.app",
-		siteName: "silverium.vercel.app",
+		url: "https://www.soldeplata.dev",
+		siteName: "soldeplata.dev",
 		images: [
 			{
 				url: "/og.png",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 		},
 	},
 	twitter: {
-		title: "Silverium",
+		title: "Soldeplata Dev",
 		card: "summary_large_image",
 	},
 	icons: {

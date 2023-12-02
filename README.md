@@ -7,6 +7,9 @@ Here are some quotes that define my philosophy:
 - "Complexity, is the inability of simplifying"
 - "If you don't want anybody to know it, don't do it"
 
+## Projects
+Check them out at my portfolio site [www.soldeplata.dev](https://www.soldeplata.dev)
+
 ## Articles
 
 I strongly believe that team work is essential to succeed as a developer.

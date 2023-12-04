@@ -28,7 +28,7 @@ export default async function ProjectsPage() {
 			acc[p.slug] = p;
 			return acc;
 		},
-		{} as Record<string, typeof allProjects[number]>,
+		{} as Record<string, (typeof allProjects)[number]>,
 	);
 
 	const featured = projectsBySlug["nyc-taxis-demo"];

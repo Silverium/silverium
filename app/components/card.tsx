@@ -1,7 +1,12 @@
 "use client";
 import { motion, useMotionTemplate, useSpring } from "framer-motion";
 
-import { MouseEventHandler, PropsWithChildren, useEffect, useState } from "react";
+import {
+	MouseEventHandler,
+	PropsWithChildren,
+	useEffect,
+	useState,
+} from "react";
 const colors = [
 	"amber",
 	"blue",
@@ -26,7 +31,6 @@ export const Card: React.FC<PropsWithChildren> = ({ children }) => {
 	useEffect(() => {
 		setColor(randomColor());
 	}, []);
-
 
 	function onMouseMove({
 		currentTarget,
@@ -57,8 +61,10 @@ export const Card: React.FC<PropsWithChildren> = ({ children }) => {
 				<span className="hover:bg-teal-800/10 hover:border-teal-400/50 via-teal-300/30" />
 				<span className="hover:bg-yellow-800/10 hover:border-yellow-400/50 via-yellow-300/30" />
 				<span className="hover:bg-zinc-800/10 hover:border-zinc-400/50 via-zinc-300/30" />
-				This element is hidden, but forces tailwind to include all the colors that will be needed to render the card. This is needed because tailwind can't compute the dynamic class names
-				to be included in the final css file.
+				This element is hidden, but forces tailwind to include all the colors
+				that will be needed to render the card. This is needed because tailwind
+				can't compute the dynamic class names to be included in the final css
+				file.
 			</div>
 			<div className="pointer-events-none">
 				<div className="absolute inset-0 z-0  transition duration-500 [mask-image:linear-gradient(lime,transparent)]" />

@@ -9,6 +9,12 @@ export const metadata: Metadata = {
 		default: "Soldeplata Dev",
 		template: "%s | soldeplata.dev",
 	},
+	authors: [
+		{
+			name: "Soldeplata Saketos",
+			url: "http://www.github.com/Silverium",
+		}
+	],
 	description: "Your favorite developer's favorite developer",
 	openGraph: {
 		title: "Soldeplata Dev",
@@ -65,9 +71,8 @@ export default function RootLayout({
 				<Analytics />
 			</head>
 			<body
-				className={`bg-black ${
-					process.env.NODE_ENV === "development" ? "debug-screens" : undefined
-				}`}
+				className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
+					}`}
 			>
 				{children}
 			</body>

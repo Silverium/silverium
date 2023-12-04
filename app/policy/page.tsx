@@ -5,7 +5,8 @@ const GDPRPolicyPage = () => {
       <h1 className="text-3xl font-bold">Privacy Policy</h1>
 
       <p className="mt-4">
-        This Privacy Policy governs the processing of your personal data by "Soldeplata Dev". We are committed to protecting your privacy and ensuring that your personal data is handled in a secure and responsible manner.
+        This Privacy Policy governs the processing of your personal data by "Soldeplata Dev".
+         We are committed to protecting your privacy and ensuring that your personal data is handled in a secure and responsible manner.
       </p>
 
       <h2 className="mt-8">Information We Collect</h2>

@@ -19,10 +19,26 @@ export const metadata: Metadata = {
 		canonical: "https://www.soldeplata.dev",
 	},
 	description: "Your favorite developer's favorite developer",
-	keywords: ["soldeplata", "developer", "frontend", "portfolio", "projects", "frontend developer", "web development", "React", "NextJs", "HTML", "CSS", "JavaScript", "Calafell", "Spain"],
+	keywords: [
+		"soldeplata",
+		"developer",
+		"frontend",
+		"portfolio",
+		"projects",
+		"frontend developer",
+		"web development",
+		"React",
+		"NextJs",
+		"HTML",
+		"CSS",
+		"JavaScript",
+		"Calafell",
+		"Spain",
+	],
 	openGraph: {
 		title: "Soldeplata Dev",
-		description: "Soldeplata.dev is the portfolio website of frontend developer Soldeplata. Explore their expertise in HTML, CSS, JavaScript, and more. Contact Soldeplata for freelance projects or collaborations.",
+		description:
+			"Soldeplata.dev is the portfolio website of frontend developer Soldeplata. Explore their expertise in HTML, CSS, JavaScript, and more. Contact Soldeplata for freelance projects or collaborations.",
 		url: "https://www.soldeplata.dev",
 		siteName: "soldeplata.dev",
 		images: [

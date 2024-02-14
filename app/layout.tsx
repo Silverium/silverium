@@ -15,6 +15,9 @@ export const metadata: Metadata = {
 			url: "http://www.github.com/Silverium",
 		},
 	],
+	alternates: {
+		canonical: "https://www.soldeplata.dev",
+	},
 	description: "Your favorite developer's favorite developer",
 	keywords: ["soldeplata", "developer", "frontend", "portfolio", "projects", "frontend developer", "web development", "React", "NextJs", "HTML", "CSS", "JavaScript", "Calafell", "Spain"],
 	openGraph: {

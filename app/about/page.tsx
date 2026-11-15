@@ -171,6 +171,14 @@ export default function AboutPage() {
 						>
 							Code samples
 						</Link>
+						<a
+							href="https://www.linkedin.com/in/soldeplata/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold duration-200 border rounded-lg border-zinc-700 text-zinc-200 hover:border-zinc-400 hover:text-white"
+						>
+							LinkedIn <ArrowUpRight className="w-4 h-4" />
+						</a>
 					</div>
 				</section>
 			</main>

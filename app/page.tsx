@@ -19,7 +19,11 @@ const jsonLd = {
 			url: SITE_URL,
 			logo: `${SITE_URL}/og.png`,
 			founder: { "@type": "Person", name: "Soldeplata Saketos Candela" },
-			sameAs: ["https://github.com/silverium", "https://x.com/soldesilver"],
+			sameAs: [
+				"https://www.linkedin.com/in/soldeplata/",
+				"https://github.com/silverium",
+				"https://x.com/soldesilver",
+			],
 		},
 		...apps.map((app) => ({
 			"@type": "SoftwareApplication",

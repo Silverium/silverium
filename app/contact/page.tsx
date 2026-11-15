@@ -1,5 +1,5 @@
 "use client";
-import { Github, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import { apps } from "../apps";
 import { Card } from "../components/card";
@@ -12,6 +12,12 @@ const socials = [
 		href: "mailto:soldeplatadeveloper@gmail.com",
 		label: "Email",
 		handle: "soldeplatadeveloper@gmail.com",
+	},
+	{
+		icon: <Linkedin size={20} />,
+		href: "https://www.linkedin.com/in/soldeplata/",
+		label: "LinkedIn",
+		handle: "soldeplata",
 	},
 	{
 		icon: <Twitter size={20} />,
@@ -39,7 +45,7 @@ export default function ContactPage() {
 					Questions, feedback, or a project you'd like to discuss? Email is the
 					fastest way to reach me.
 				</p>
-				<div className="grid w-full grid-cols-1 gap-8 mt-12 sm:grid-cols-3 lg:gap-16">
+				<div className="grid w-full grid-cols-1 gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
 					{socials.map((s) => (
 						<Card key={s.href}>
 							<Link

@@ -10,6 +10,7 @@ const company = [
 
 const social = [
 	{ name: "X", href: "https://x.com/soldesilver" },
+	{ name: "LinkedIn", href: "https://www.linkedin.com/in/soldeplata/" },
 	{ name: "GitHub", href: "https://github.com/silverium" },
 ];
 

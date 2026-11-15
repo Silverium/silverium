@@ -4,9 +4,13 @@ import LocalFont from "next/font/local";
 import "../global.css";
 import { Analytics } from "./components/analytics";
 
+const description =
+	"Mis Tallas and Play: small, focused web apps built and run by Soldeplata Saketos.";
+
 export const metadata: Metadata = {
+	metadataBase: new URL("https://www.soldeplata.dev"),
 	title: {
-		default: "Soldeplata Dev",
+		default: "Soldeplata · Independent web apps",
 		template: "%s | soldeplata.dev",
 	},
 	authors: [
@@ -18,27 +22,26 @@ export const metadata: Metadata = {
 	alternates: {
 		canonical: "https://www.soldeplata.dev",
 	},
-	description: "Your favorite developer's favorite developer",
+	description,
 	keywords: [
 		"soldeplata",
-		"developer",
-		"frontend",
-		"portfolio",
-		"projects",
-		"frontend developer",
-		"web development",
+		"Mis Tallas",
+		"clothing sizes app",
+		"shoe size tracker",
+		"Play",
+		"browser games",
+		"tap games",
+		"memory games",
+		"web apps",
+		"indie developer",
 		"React",
-		"NextJs",
-		"HTML",
-		"CSS",
-		"JavaScript",
+		"Next.js",
 		"Calafell",
 		"Spain",
 	],
 	openGraph: {
-		title: "Soldeplata Dev",
-		description:
-			"Soldeplata.dev is the portfolio website of frontend developer Soldeplata. Explore their expertise in HTML, CSS, JavaScript, and more. Contact Soldeplata for freelance projects or collaborations.",
+		title: "Soldeplata · Independent web apps",
+		description,
 		url: "https://www.soldeplata.dev",
 		siteName: "soldeplata.dev",
 		images: [
@@ -63,8 +66,10 @@ export const metadata: Metadata = {
 		},
 	},
 	twitter: {
-		title: "Soldeplata Dev",
+		title: "Soldeplata · Independent web apps",
+		description,
 		card: "summary_large_image",
+		creator: "@soldesilver",
 	},
 	icons: {
 		shortcut: "/favicon.png",

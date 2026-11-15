@@ -1,28 +1,21 @@
-import { Redis } from "@upstash/redis";
 import { allProjects } from "contentlayer/generated";
-import { Eye } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
+import { apps } from "../apps";
 import { Card } from "../components/card";
+import { Footer } from "../components/footer";
 import { Navigation } from "../components/nav";
 import { Article } from "./article";
 
-const redis = Redis.fromEnv();
+export const metadata: Metadata = {
+	alternates: { canonical: "/projects" },
+	title: "Code samples",
+	description:
+		"Hand-written code samples, take-home exercises and client work by Soldeplata, from the pre-AI era (2018–2023).",
+};
 
-export const revalidate = 60;
-export default async function ProjectsPage() {
-	const views = (
-		await redis.mget<number[]>(
-			...allProjects.map((p) => ["pageviews", "projects", p.slug].join(":")),
-		)
-	).reduce(
-		(acc, v, i) => {
-			acc[allProjects[i].slug] = v ?? 0;
-			return acc;
-		},
-		{} as Record<string, number>,
-	);
-
+export default function ProjectsPage() {
 	const projectsBySlug = allProjects.reduce(
 		(acc, p) => {
 			acc[p.slug] = p;
@@ -54,9 +47,33 @@ export default async function ProjectsPage() {
 			<Navigation />
 			<div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
 				<div className="max-w-2xl mx-auto lg:mx-0">
-					<h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
-						Projects
-					</h2>
+					<div className="flex flex-wrap items-center gap-3">
+						<h1 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+							Code samples &amp; exercises
+						</h1>
+						<span className="px-2.5 py-1 text-xs font-medium border rounded-full border-zinc-600 text-zinc-300">
+							Pre-AI era · 2018–2023
+						</span>
+					</div>
+					<p className="mt-4 leading-7 text-zinc-400">
+						Hand-written take-home exercises from job applications and earlier
+						client work, built before AI coding assistants. For the products I
+						run today, see{" "}
+						{apps.map((app, i) => (
+							<React.Fragment key={app.slug}>
+								{i > 0 && " and "}
+								<a
+									href={app.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="underline duration-200 text-zinc-200 underline-offset-4 hover:text-white"
+								>
+									{app.name}
+								</a>
+							</React.Fragment>
+						))}
+						.
+					</p>
 				</div>
 				<div className="w-full h-px bg-zinc-800" />
 
@@ -77,12 +94,6 @@ export default async function ProjectsPage() {
 												<span>SOON</span>
 											)}
 										</div>
-										<span className="flex items-center gap-1 text-xs text-zinc-500">
-											<Eye className="w-4 h-4" />{" "}
-											{Intl.NumberFormat("en-US", {
-												notation: "compact",
-											}).format(views[featured.slug] ?? 0)}
-										</span>
 									</div>
 
 									<h2
@@ -109,7 +120,7 @@ export default async function ProjectsPage() {
 							top3 &&
 							[top2, top3].map((project) => (
 								<Card key={project.slug}>
-									<Article project={project} views={views[project.slug] ?? 0} />
+									<Article project={project} />
 								</Card>
 							))}
 					</div>
@@ -122,7 +133,7 @@ export default async function ProjectsPage() {
 							.filter((_, i) => i % 3 === 0)
 							.map((project) => (
 								<Card key={project.slug}>
-									<Article project={project} views={views[project.slug] ?? 0} />
+									<Article project={project} />
 								</Card>
 							))}
 					</div>
@@ -131,7 +142,7 @@ export default async function ProjectsPage() {
 							.filter((_, i) => i % 3 === 1)
 							.map((project) => (
 								<Card key={project.slug}>
-									<Article project={project} views={views[project.slug] ?? 0} />
+									<Article project={project} />
 								</Card>
 							))}
 					</div>
@@ -140,11 +151,14 @@ export default async function ProjectsPage() {
 							.filter((_, i) => i % 3 === 2)
 							.map((project) => (
 								<Card key={project.slug}>
-									<Article project={project} views={views[project.slug] ?? 0} />
+									<Article project={project} />
 								</Card>
 							))}
 					</div>
 				</div>
+			</div>
+			<div className="mt-16">
+				<Footer />
 			</div>
 		</div>
 	);

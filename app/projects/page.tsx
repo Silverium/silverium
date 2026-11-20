@@ -2,11 +2,14 @@ import { allProjects } from "contentlayer/generated";
 import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
-import { apps } from "../apps";
 import { Card } from "../components/card";
 import { Footer } from "../components/footer";
 import { Navigation } from "../components/nav";
+import { getAppsPayload } from "../data/public-api";
 import { Article } from "./article";
+
+// Same payload as GET /api/apps
+const { apps } = getAppsPayload({ origin: "" });
 
 export const metadata: Metadata = {
 	alternates: { canonical: "/projects" },
@@ -61,7 +64,7 @@ export default function ProjectsPage() {
 						run today, see{" "}
 						{apps.map((app, i) => (
 							<React.Fragment key={app.slug}>
-								{i > 0 && " and "}
+								{i > 0 && (i === apps.length - 1 ? " and " : ", ")}
 								<a
 									href={app.url}
 									target="_blank"

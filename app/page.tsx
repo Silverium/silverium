@@ -2,12 +2,13 @@ import { ArrowRight, ArrowUpRight, Check, Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { apps } from "./apps";
 import { Card } from "./components/card";
 import { Footer } from "./components/footer";
 import { Navigation } from "./components/nav";
+import { SITE_URL, getAppsPayload } from "./data/public-api";
 
-const SITE_URL = "https://www.soldeplata.dev";
+// Same payload as GET /api/apps
+const { apps } = getAppsPayload({ origin: "" });
 
 const jsonLd = {
 	"@context": "https://schema.org",
@@ -87,7 +88,7 @@ export default function Home() {
 					<h2 className="text-sm font-semibold tracking-wider uppercase text-zinc-500">
 						The apps
 					</h2>
-					<div className="grid grid-cols-1 gap-6 mt-6 lg:grid-cols-2">
+					<div className="grid grid-cols-1 gap-6 mt-6 lg:grid-cols-2 xl:grid-cols-3">
 						{apps.map((app) => (
 							<Card key={app.slug}>
 								<article className="relative z-20 flex flex-col h-full p-6 md:p-10">

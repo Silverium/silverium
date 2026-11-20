@@ -3,9 +3,9 @@ import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
 import "../global.css";
 import { Analytics } from "./components/analytics";
+import { appNames } from "./data/public-api";
 
-const description =
-	"Mis Tallas and Play: small, focused web apps built and run by Soldeplata Saketos.";
+const description = `${appNames}: small, focused web apps built and run by Soldeplata Saketos.`;
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://www.soldeplata.dev"),
@@ -32,6 +32,9 @@ export const metadata: Metadata = {
 		"browser games",
 		"tap games",
 		"memory games",
+		"Cuerpo",
+		"BMI calculator",
+		"body water calculator",
 		"web apps",
 		"indie developer",
 		"React",

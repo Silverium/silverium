@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { apps } from "../apps";
+import { social } from "../data/about";
+import { getAppsPayload } from "../data/public-api";
 
 const company = [
 	{ name: "About", href: "/about" },
@@ -8,11 +9,8 @@ const company = [
 	{ name: "Privacy policy", href: "/policy" },
 ];
 
-const social = [
-	{ name: "X", href: "https://x.com/soldesilver" },
-	{ name: "LinkedIn", href: "https://www.linkedin.com/in/soldeplata/" },
-	{ name: "GitHub", href: "https://github.com/silverium" },
-];
+// Same payload as GET /api/apps
+const { apps } = getAppsPayload({ origin: "" });
 
 const linkClass = "text-sm duration-200 text-zinc-400 hover:text-zinc-100";
 
@@ -75,7 +73,7 @@ export const Footer: React.FC = () => {
 										rel="noopener noreferrer"
 										className={linkClass}
 									>
-										{item.name}
+										{item.label}
 									</a>
 								</li>
 							))}

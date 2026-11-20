@@ -1,10 +1,12 @@
 "use client";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
-import { apps } from "../apps";
 import { Card } from "../components/card";
 import { Footer } from "../components/footer";
 import { Navigation } from "../components/nav";
+import { getAppsPayload } from "../data/public-api";
+
+const { apps } = getAppsPayload({ origin: "" });
 
 const socials = [
 	{

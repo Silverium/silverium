@@ -33,7 +33,7 @@ const entries: AppEntry[] = [
 		url: "https://mistallas.soldeplata.dev",
 		supportEmail: "mistallas@soldeplata.dev",
 		category: "LifestyleApplication",
-		icon: "https://mistallas.soldeplata.dev/icon.png",
+		icon: "https://mistallas.soldeplata.dev/favicon/web-app-manifest-192x192.png",
 		copy: {
 			en: {
 				tagline: "Your size in every brand, for the whole family.",

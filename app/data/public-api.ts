@@ -127,4 +127,9 @@ export function getAboutPayload({
 export const appNames = new Intl.ListFormat("en", {
 	style: "long",
 	type: "conjunction",
-}).format(getApps().map((app) => app.name));
+}).format(
+	// Client sites are built for others, not run by me
+	getApps()
+		.filter((app) => !app.client)
+		.map((app) => app.name),
+);

@@ -34,7 +34,10 @@ const jsonLd = {
 			description: app.description,
 			applicationCategory: app.category,
 			operatingSystem: "Web",
-			publisher: { "@id": `${SITE_URL}/#organization` },
+			// Client sites are published by the client; I only built them
+			[app.client ? "creator" : "publisher"]: {
+				"@id": `${SITE_URL}/#organization`,
+			},
 		})),
 	],
 };

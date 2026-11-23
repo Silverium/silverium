@@ -14,8 +14,7 @@ type AppEntry = {
 	slug: string;
 	name: string;
 	url: string;
-	/** Omitted for client sites that have their own contact channel */
-	supportEmail?: string;
+	supportEmail: string;
 	/** Built for a client rather than run by me */
 	client?: boolean;
 	/** schema.org applicationCategory */
@@ -172,6 +171,7 @@ const entries: AppEntry[] = [
 		slug: "hermanicura",
 		name: "hermanicura",
 		url: "https://hermanicura.com",
+		supportEmail: "hermanicura@soldeplata.dev",
 		client: true,
 		category: "LifestyleApplication",
 		icon: "https://hermanicura.com/favicon.svg",

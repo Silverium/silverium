@@ -76,20 +76,18 @@ export default function ContactPage() {
 				</div>
 				<p className="mt-12 text-sm text-zinc-500">
 					App support:{" "}
-					{apps
-						.filter((app) => app.supportEmail)
-						.map((app, i) => (
-							<span key={app.slug}>
-								{i > 0 && " · "}
-								{app.name}{" "}
-								<a
-									href={`mailto:${app.supportEmail}`}
-									className="underline duration-200 text-zinc-300 underline-offset-4 hover:text-white"
-								>
-									{app.supportEmail}
-								</a>
-							</span>
-						))}
+					{apps.map((app, i) => (
+						<span key={app.slug}>
+							{i > 0 && " · "}
+							{app.name}{" "}
+							<a
+								href={`mailto:${app.supportEmail}`}
+								className="underline duration-200 text-zinc-300 underline-offset-4 hover:text-white"
+							>
+								{app.supportEmail}
+							</a>
+						</span>
+					))}
 				</p>
 			</main>
 			<Footer />

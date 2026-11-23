@@ -14,7 +14,10 @@ type AppEntry = {
 	slug: string;
 	name: string;
 	url: string;
-	supportEmail: string;
+	/** Omitted for client sites that have their own contact channel */
+	supportEmail?: string;
+	/** Built for a client rather than run by me */
+	client?: boolean;
 	/** schema.org applicationCategory */
 	category: string;
 	/** Absolute URL of the app icon, hosted by the app itself */
@@ -162,6 +165,54 @@ const entries: AppEntry[] = [
 				],
 				languages: "Espanhol",
 				cta: "Abrir o Cuerpo",
+			},
+		},
+	},
+	{
+		slug: "hermanicura",
+		name: "hermanicura",
+		url: "https://hermanicura.com",
+		client: true,
+		category: "LifestyleApplication",
+		icon: "https://hermanicura.com/favicon.svg",
+		copy: {
+			en: {
+				tagline: "Mobile-first website for a manicure and pedicure studio.",
+				description:
+					"Website for hermanicura, a nail studio in Calafell (Tarragona). Clients browse services, photos and promotions and book over WhatsApp; the owner runs everything from an admin panel on her phone.",
+				highlights: [
+					"Admin panel built for the phone",
+					"Referral programme with points",
+					"Instagram reels and photo gallery",
+				],
+				languages: "Spanish",
+				cta: "Visit hermanicura",
+			},
+			es: {
+				tagline:
+					"Web pensada para el móvil para un estudio de manicura y pedicura.",
+				description:
+					"Web de hermanicura, un estudio de uñas en Calafell (Tarragona). Las clientas ven servicios, fotos y promociones y piden cita por WhatsApp; la dueña lo gestiona todo desde un panel de administración en el móvil.",
+				highlights: [
+					"Panel de administración pensado para el móvil",
+					"Programa de referidos con puntos",
+					"Reels de Instagram y galería de fotos",
+				],
+				languages: "Español",
+				cta: "Visitar hermanicura",
+			},
+			"pt-BR": {
+				tagline:
+					"Site pensado para o celular para um estúdio de manicure e pedicure.",
+				description:
+					"Site da hermanicura, um estúdio de unhas em Calafell (Tarragona). As clientes veem serviços, fotos e promoções e marcam horário pelo WhatsApp; a dona gerencia tudo por um painel de administração no celular.",
+				highlights: [
+					"Painel de administração pensado para o celular",
+					"Programa de indicações com pontos",
+					"Reels do Instagram e galeria de fotos",
+				],
+				languages: "Espanhol",
+				cta: "Visitar a hermanicura",
 			},
 		},
 	},

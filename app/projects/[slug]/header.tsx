@@ -2,6 +2,7 @@
 import { ArrowLeft, Eye, Github, Twitter } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import { ClientBadge } from "../../components/client-badge";
 
 type Props = {
 	project: {
@@ -9,6 +10,7 @@ type Props = {
 		title: string;
 		description: string;
 		repository?: string;
+		client?: boolean;
 	};
 
 	views: number;
@@ -102,6 +104,11 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 			<div className="container mx-auto relative isolate overflow-hidden  py-24 sm:py-32">
 				<div className="mx-auto max-w-7xl px-6 lg:px-8 text-center flex flex-col items-center">
 					<div className="mx-auto max-w-2xl lg:mx-0">
+						{project.client && (
+							<div className="flex justify-center mb-6">
+								<ClientBadge />
+							</div>
+						)}
 						<h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display">
 							{project.title}
 						</h1>

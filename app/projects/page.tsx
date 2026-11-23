@@ -9,7 +9,7 @@ import { getAppsPayload } from "../data/public-api";
 import { Article } from "./article";
 
 // Same payload as GET /api/apps
-const { apps } = getAppsPayload({ origin: "" });
+const apps = getAppsPayload({ origin: "" }).apps.filter((app) => !app.client);
 
 export const metadata: Metadata = {
 	alternates: { canonical: "/projects" },

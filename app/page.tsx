@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Card } from "./components/card";
+import { ClientBadge } from "./components/client-badge";
 import { Footer } from "./components/footer";
 import { Navigation } from "./components/nav";
 import { SITE_URL, getAppsPayload } from "./data/public-api";
@@ -96,11 +97,14 @@ export default function Home() {
 										<h3 className="text-3xl text-zinc-50 font-display md:text-4xl">
 											{app.name}
 										</h3>
-										<span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs border rounded-full shrink-0 border-zinc-700 text-zinc-400">
-											<Globe className="w-3 h-3" aria-hidden="true" />
-											<span className="sr-only">Languages: </span>
-											{app.languages}
-										</span>
+										<div className="flex flex-wrap justify-end gap-2">
+											{app.client && <ClientBadge />}
+											<span className="inline-flex items-center gap-1 px-2.5 py-1 text-xs border rounded-full shrink-0 border-zinc-700 text-zinc-400">
+												<Globe className="w-3 h-3" aria-hidden="true" />
+												<span className="sr-only">Languages: </span>
+												{app.languages}
+											</span>
+										</div>
 									</div>
 									<p className="mt-3 text-lg text-zinc-200">{app.tagline}</p>
 									<p className="mt-4 leading-7 text-zinc-400">

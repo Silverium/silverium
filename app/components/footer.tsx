@@ -10,7 +10,8 @@ const company = [
 ];
 
 // Same payload as GET /api/apps
-const { apps } = getAppsPayload({ origin: "" });
+// Client sites are not my apps, so they stay out of the footer
+const apps = getAppsPayload({ origin: "" }).apps.filter((app) => !app.client);
 
 const linkClass = "text-sm duration-200 text-zinc-400 hover:text-zinc-100";
 

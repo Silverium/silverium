@@ -8,6 +8,8 @@ type AppCopy = {
 	/** Languages the app itself is available in */
 	languages: string;
 	cta: string;
+	/** Label of the demo link, for apps with a `demoUrl` */
+	demoCta?: string;
 };
 
 type AppEntry = {
@@ -21,8 +23,10 @@ type AppEntry = {
 	category: string;
 	/** Absolute URL of the app icon, hosted by the app itself */
 	icon?: string;
-	/** Optional screenshot under /public/apps/ */
+	/** Optional screenshot under /public/apps/, 1200x750 (16:10) */
 	image?: string;
+	/** A page to try the app without an account, linked next to the main CTA */
+	demoUrl?: string;
 	copy: Record<Locale, AppCopy>;
 };
 
@@ -36,6 +40,8 @@ const entries: AppEntry[] = [
 		supportEmail: "mistallas@soldeplata.dev",
 		category: "LifestyleApplication",
 		icon: "https://mistallas.soldeplata.dev/favicon/web-app-manifest-192x192.png",
+		image: "/apps/mistallas.jpg",
+		demoUrl: "https://mistallas.soldeplata.dev/demo",
 		copy: {
 			en: {
 				tagline: "Your size in every brand, for the whole family.",
@@ -48,6 +54,7 @@ const entries: AppEntry[] = [
 				],
 				languages: "Spanish",
 				cta: "Open Mis Tallas",
+				demoCta: "Try the demo",
 			},
 			es: {
 				tagline: "Tu talla en cada marca, para toda la familia.",
@@ -60,6 +67,7 @@ const entries: AppEntry[] = [
 				],
 				languages: "Español",
 				cta: "Abrir Mis Tallas",
+				demoCta: "Probar la demo",
 			},
 			"pt-BR": {
 				tagline: "Seu tamanho em cada marca, para toda a família.",
@@ -72,6 +80,7 @@ const entries: AppEntry[] = [
 				],
 				languages: "Espanhol",
 				cta: "Abrir o Mis Tallas",
+				demoCta: "Testar a demo",
 			},
 		},
 	},
@@ -82,6 +91,7 @@ const entries: AppEntry[] = [
 		supportEmail: "play@soldeplata.dev",
 		category: "GameApplication",
 		icon: "https://play.soldeplata.dev/icons/icon-192.png",
+		image: "/apps/play.jpg",
 		copy: {
 			en: {
 				tagline: "Tiny tap & swipe games you can share.",
@@ -128,6 +138,7 @@ const entries: AppEntry[] = [
 		supportEmail: "cuerpo@soldeplata.dev",
 		category: "HealthApplication",
 		icon: "https://cuerpo.soldeplata.dev/favicon.svg",
+		image: "/apps/cuerpo.jpg",
 		copy: {
 			en: {
 				tagline: "Body measurement calculators, in plain numbers.",
@@ -175,6 +186,7 @@ const entries: AppEntry[] = [
 		client: true,
 		category: "LifestyleApplication",
 		icon: "https://hermanicura.com/favicon.svg",
+		image: "/apps/hermanicura.jpg",
 		copy: {
 			en: {
 				tagline: "Mobile-first website for a manicure and pedicure studio.",

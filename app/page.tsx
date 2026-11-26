@@ -11,6 +11,16 @@ import { SITE_URL, getAppsPayload } from "./data/public-api";
 // Same payload as GET /api/apps
 const { apps } = getAppsPayload({ origin: "" });
 
+/**
+ * Tag outgoing app links so each app's analytics can count visits from here: the links
+ * are noreferrer, so the apps would otherwise see them as direct visits.
+ */
+const withRef = (url: string) => {
+	const tagged = new URL(url);
+	tagged.searchParams.set("ref", "soldeplata");
+	return tagged.toString();
+};
+
 const jsonLd = {
 	"@context": "https://schema.org",
 	"@graph": [
@@ -96,8 +106,31 @@ export default function Home() {
 						{apps.map((app) => (
 							<Card key={app.slug}>
 								<article className="relative z-20 flex flex-col h-full p-6 md:p-10">
-									<div className="flex items-center justify-between gap-4">
-										<h3 className="text-3xl text-zinc-50 font-display md:text-4xl">
+									{app.image && (
+										<Image
+											src={app.image}
+											alt={`${app.name} screenshot`}
+											width={1200}
+											height={750}
+											sizes="(min-width: 1280px) 384px, (min-width: 1024px) 50vw, 100vw"
+											className="object-cover object-top w-full mb-6 border rounded-lg aspect-[16/10] border-zinc-800"
+										/>
+									)}
+									{/* Wraps so the badges drop below a long name instead of overflowing the card */}
+									<div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3">
+										<h3 className="flex items-center gap-3 text-3xl whitespace-nowrap text-zinc-50 font-display md:text-4xl">
+											{app.icon && (
+												// Hosted by each app, so a plain img avoids allow-listing every origin in
+												// next.config. Decorative: the name is right next to it.
+												<img
+													src={app.icon}
+													alt=""
+													width={36}
+													height={36}
+													loading="lazy"
+													className="rounded-lg shrink-0 w-9 h-9"
+												/>
+											)}
 											{app.name}
 										</h3>
 										<div className="flex flex-wrap justify-end gap-2">
@@ -127,15 +160,25 @@ export default function Home() {
 											</li>
 										))}
 									</ul>
-									<div className="pt-8 mt-auto">
+									<div className="flex flex-wrap items-center gap-3 pt-8 mt-auto">
 										<a
-											href={app.url}
+											href={withRef(app.url)}
 											target="_blank"
 											rel="noopener noreferrer"
 											className="inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold duration-200 rounded-lg bg-zinc-100 text-zinc-900 hover:bg-white"
 										>
 											{app.cta} <ArrowUpRight className="w-4 h-4" />
 										</a>
+										{app.demoUrl && app.demoCta && (
+											<a
+												href={withRef(app.demoUrl)}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold duration-200 border rounded-lg border-zinc-700 text-zinc-200 hover:border-zinc-400 hover:text-white"
+											>
+												{app.demoCta} <ArrowUpRight className="w-4 h-4" />
+											</a>
+										)}
 									</div>
 								</article>
 							</Card>
